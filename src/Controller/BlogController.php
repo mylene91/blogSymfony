@@ -44,10 +44,11 @@ class BlogController extends AbstractController
     /**
      * @Route("/blog/{id}", name="blog_show")
      */
-    public function show(ArticleRepository $repo, $id) {
+    // converti un parametre de la requete en objet
+    public function show(Article $article) { // grace au @ParamConverter de symfony plus besoin de demander (ArticleRepository $repo, $id) et $article = $repo->find($id);
         //$repo = $this->getDoctrine()->getRepository((Article::class));
         // trouve l'article qui a le même id qu'on m'a passé
-        $article = $repo->find($id);
+        //$article = $repo->find($id);
 
         return $this->render('blog/show.html.twig', [
             'article' => $article
