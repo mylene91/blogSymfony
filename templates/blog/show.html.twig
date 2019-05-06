@@ -2,23 +2,11 @@
 
 {% block body %}
     <article>
-        <h2>Titre de l'article</h2>
-        <div class="metadata">Ecrit le 10/06/2019 à 9:50 dans la catégorie Musique</div>
-        <div class="content"><img src="http://placehold.it/350x150" alt="">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, eveniet, quibusdam! Inventore unde
-                voluptas voluptate?</p>
-            <p>Blanditiis dolore excepturi mollitia neque nesciunt nobis obcaecati officia quibusdam reprehenderit vero?
-                Cumque, illo, molestias.</p>
+        <h2>{{ article.title }}</h2>
+        <div class="metadata">Ecrit le {{ article.createdAt | date('d/m/Y') }} à {{ article.createdAt | date('H:i') }} dans la catégorie Musique</div>
+        <div class="content"><img src="{{ article.image }}" alt="">
+            {{ article.content | raw }}
         </div>
-        <hr>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, iusto, mollitia. Asperiores eos fugit
-            impedit minus praesentium voluptatum? Asperiores atque autem cumque debitis, delectus eum, fugiat impedit
-            itaque magni maiores obcaecati reiciendis reprehenderit sit suscipit ullam! A ab, adipisci culpa distinctio
-            ex magnam magni nostrum quam quo reprehenderit sed vero?</p>
-        <p>Accusamus architecto delectus dignissimos maiores nobis saepe voluptatibus. Aliquam dolorem error
-            exercitationem facilis hic id impedit numquam sed voluptatem. Commodi consequuntur distinctio eaque, eos hic
-            impedit odit provident quas ratione suscipit! Adipisci, architecto asperiores atque deserunt ipsa ipsum
-            labore minus molestiae nam necessitatibus, nemo nihil obcaecati officiis quia rem tempora.</p>
     </article>
 
 
