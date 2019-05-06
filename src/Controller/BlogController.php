@@ -41,6 +41,15 @@ class BlogController extends AbstractController
         ]);
     }
 
+
+    /**
+     * @Route ("/blog/new", name="blog_create")
+     */
+    // on remonte la méthode dans le code pour éviter que ça orte à confusion au niveau des routes avec {id} de la route de la méthode show
+    public function create() {
+        return $this->render('blog/create.html.twig');
+    }
+
     /**
      * @Route("/blog/{id}", name="blog_show")
      */
@@ -54,4 +63,6 @@ class BlogController extends AbstractController
             'article' => $article
         ]);
     }
+
+
 }
